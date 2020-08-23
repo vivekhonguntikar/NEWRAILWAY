@@ -1,0 +1,140 @@
+<html>
+ <head>
+   <title>Passenger List Page</title>
+ </head>
+ <body>
+     <form name="form1" method="POST">
+     	{{msg}}
+<center>
+
+<tr>
+<td>Passenger List
+</td></tr></center><br/>
+<table align="center">
+<tr>
+<td>Name</td>
+<td>Age</td>
+<td>Gender</td>
+<td>Concession</td></tr>
+<tr><td colspan=4><hr/></td></tr>
+<tr>
+<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
+</td>
+<td>
+<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
+</td>
+<td>
+<select required name="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select></td>
+<td>
+<select required name="concession">
+<option value="">Select Concession</option>
+<option>Disabled Passengers</option>
+<option>Senior Citizens</option>
+<option>Students</option>
+<option>Artists and Sportspersons</option>
+
+</select></td></tr>
+<tr><td colspan=4><hr/></td></tr>
+<tr>
+<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
+</td>
+<td>
+<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
+</td>
+<td>
+<select required name="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select></td>
+<td>
+<select required name="concession">
+<option value="">Select Concession</option>
+<option>Disabled Passengers</option>
+<option>Senior Citizens</option>
+<option>Students</option>
+<option>Artists and Sportspersons</option>
+
+</select></td></tr>
+
+<tr><td colspan=4><hr/></td></tr>
+<tr>
+<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
+</td>
+<td>
+<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
+</td>
+<td>
+<select required name="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select></td>
+<td>
+<select required name="concession">
+<option value="">Select Concession</option>
+<option>Disabled Passengers</option>
+<option>Senior Citizens</option>
+<option>Students</option>
+<option>Artists and Sportspersons</option>
+
+</select></td></tr>
+<tr><td colspan=4><hr/></td></tr>
+
+<tr>
+<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
+</td>
+<td>
+<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
+</td>
+<td>
+<select required name="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select></td>
+<td>
+<select required name="concession">
+<option value="">Select Concession</option>
+<option>Disabled Passengers</option>
+<option>Senior Citizens</option>
+<option>Students</option>
+<option>Artists and Sportspersons</option>
+
+</select></td></tr>
+
+<tr><td colspan=4><hr/></td></tr>
+<tr>
+<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
+</td>
+<td>
+<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
+</td>
+<td>
+<select required name="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select></td>
+<td>
+<select required name="concession">
+<option value="">Select Concession</option>
+<option>Disabled Passengers</option>
+<option>Senior Citizens</option>
+<option>Students</option>
+<option>Artists and Sportspersons</option>
+</select></td></tr>
+<hr/>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" name="btnsubmit" value="submit"/>
+<input type="reset" name="btnclear" value="Cancel">
+</td>
+</tr></table>
+{%csrf_token%}
+</form>
+</body>

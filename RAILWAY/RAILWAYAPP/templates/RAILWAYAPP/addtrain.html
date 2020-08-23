@@ -1,0 +1,55 @@
+<html>
+ <head>
+   <title>Add Train Page</title>
+ </head>
+ <body>
+     <form name="form1" method="POST">
+     	{{msg}}
+<center>
+<tr><td>Add Train</td></tr>
+</center><br/>
+<table align="center">
+<tr>
+<td>
+Train Number
+</td>
+<td>
+<input type="number" name="trainnumber" placeholder="Enter Train No" required autocomplete="off" maxlength="6" style="width:100%" title="Enter Valid Train Number" pattern="[0-9]{10}"/>
+</td>
+</tr>
+<tr>
+<td colspan=2><hr/></td></tr>
+<tr>
+<td>
+Train Name</td>
+<td>
+ <input type="text" name="name" placeholder="Enter Train Name" maxlength="50" autofocus="on" autocomplete="off" required="required"/>
+</td>
+</tr>
+<tr>
+<td colspan=2><hr/></td></tr>
+<tr>
+<td>AC-2Tier</td>
+<td><input type="number" name="ac2tiernumber" placeholder="Enter the number of AC-2 Tier Coach" required autocomplete="off"/></td></tr>
+<tr>
+<td colspan=2><hr/></td></tr>
+<tr>
+<td>AC-3Tier</td>
+<td><input type="number" name="ac2tiernumber" placeholder="Enter the number of AC-3 Tier Coach" required autocomplete="off"/></td></tr>
+<tr>
+<td colspan=2><hr/></td></tr><tr>
+<td>Sleeper</td>
+<td><input type="number" name="sleepnumber" placeholder="Enter the number of Sleeper Coach" required autocomplete="off"/></td></tr>
+
+<tr><td colspan=2><hr/></td></tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" name="btnsubmit" value="Submit"/>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" name="btnclear" value="Cancel">
+</td>
+</tr></table>
+{%csrf_token%}
+</form>
+</body>

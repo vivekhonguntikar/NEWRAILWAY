@@ -1,0 +1,42 @@
+<html>
+ <head>
+   <title>Login Page</title>
+ </head>
+ <body>
+     <form name="form1" method="POST">
+     	{{msg}}
+<center>
+
+<tr>
+<td>Login
+</td></tr></center><br/>
+
+
+<table align="center">
+<tr>
+<td>Mobile Number
+</td>
+<td>
+<input type="number" name="mobilenumber" placeholder="Enter Mobile No" required autocomplete="off" min="6300000000" max="9999999999" style="width:100%" title="Enter Valid Mobile Number" pattern="[0-9]{10}"/>
+</td>
+</tr>
+<tr><td colspan="2"><hr/></td></tr>
+<tr>
+<td>
+Password
+</td>
+<td>
+<input type="password" name="password" required placeholder="Enter Password" maxlength="30"/>
+</td>
+</tr>
+<tr><td colspan="2"><hr/></td></tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" name="btnsubmit" value="login"/>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" name="btnclear" value="Cancel">
+</td>
+</tr></table>
+{%csrf_token%}
+</form>

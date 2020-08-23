@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border=1 align="center">
+  {%for d in data%}
+  <tr>
+  	<td>{{d.trainno}}</td>
+  	<td>{{d.trainname}}</td>
+  	<td>{{d.ac2tier}}</td>
+  	<td>{{d.ac3tier}}</td>
+  	<td>{{d.sleeper}}</td>
+    <td>
+      <input type="submit" name="btnsubmit" value="Delete">
+    </td>
+  </tr>
+  {%endfor%}
+    </table>
+
+
+</body>
+</html>
