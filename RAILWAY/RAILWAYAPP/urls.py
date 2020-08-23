@@ -17,13 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from RAILWAYAPP import views
 urlpatterns = [
-  path("register/",views.TCSave),
-  path("tcregisterdisplay/",views.registerdisplay),
-  path("addtrain/",views.AddtrainSave),
-  path("addtraindisplay/",views.addtraindisplay),
-  path("trainroute/",views.TrainrouteSave),
-  path("trainroutedisplay/",views.trainroutedisplay),
-  path("passengerlist/",views.PassengerSave),
-  path("passengerlistdisplay/",views.passengerlistdisplay),
+  path("adminhome",views.adminhome),
+  path("login",views.loginpage),
+  path("railway",views.loginpage),
+  path("register",views.TCSave),
+  path("tcregisterdisplay",views.registerdisplay),
+  path("addtrain",views.AddtrainSave),
+  path("addtraindisplay",views.addtraindisplay),
+  path("trainroute",views.TrainrouteSave),
+  path("trainroutedisplay",views.trainroutedisplay),
+  path("passengerlist",views.PassengerSave),
+  path("passengerlistdisplay",views.passengerlistdisplay),
+  path("tcpassengerlistdisplay",views.tcpassengerlistdisplay),
+  path("tchome",views.tchome),
 
   ]
