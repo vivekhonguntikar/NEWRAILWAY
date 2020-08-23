@@ -1,9 +1,9 @@
 <html>
-<head>
-<title>Reservation Page</title>
+ <head>
+   <title>Home</title>
         <style>
             body {
-                background-color: green;
+                background-color:skyblue;
                 width: 100%;
                 color: #000;
             }
@@ -65,9 +65,9 @@
             }
         </style>
 
-</head>
-<body>
-   <table style="width: 99%;height:100%;" border="1">
+ </head>
+ <body>
+    <table style="width: 99%;height:100%;" border="1">
     	<tr>
     		<td style="width: 100%;height:10%;" align="center"><br/><h1>Indian Railway E-Ticketing</h1></td>
     	</tr>
@@ -75,12 +75,12 @@
     		<td style="width: 100%;height:5%;">
 			<table style="width: 100%;height:100%;">
 					<tr>
-								<th><a href="adminhome"><font color="brown">Home</font></a></th>
+						<th><a href="adminhome"><font color="brown">Home</font></a></th>
 						<th><a href="addtrain"><font color="brown">Add Train</font></a></th>
 						<th><a href="register"><font color="brown">Add TC</font></a></th>
 						<th><a href="passengerlist"><font color="brown">Passenger Entry</font></a></th>
 						<th><a href="railway"><font color="brown">Signout</font></a></th>
-					
+							
 					</tr>
 			</table>    			
     		</td>
@@ -88,49 +88,62 @@
     	<tr>
     		
     		<td style="width: 100%;height:80%;">
- 
+    	<form name="form1" method="POST">
 <center>
-             <font size="+2" color="white">
-                {% if msg  %}
-                    {{msg}}
-                {% endif  %}
-            </font>
-</center>
-<form name="form1" method="POST">
-<center><tr>
-<td>Reservation</td>
-</tr>
-</center><br/>
+        {{msg}}
 
-<table align="center" width="100%">
+<h2>Add New Train</h2>
+</center>
+<table align="center">
 <tr>
-<td>Source</td>
-<td><select required name="sourcestation">
-<option value="">Select Source Station</option>
-<option>BNC</option>
-<option>UBL</option>
-<option>MAQ</option>
-<option>MYS</option>
-</select>
+<td>
+Train Number
 </td>
-<td>Destination</td>
-<td><select required name="destinationstation">
-<option value="">Select Destination Station</option>
-<option>HAS</option>
-<option>KLBG</option>
-<option>SMET</option>
-<option>RC</option>
-</select>
-</td></tr>
-<tr><td colspan=4><hr/></td></tr>
+<td>
+<input type="number" name="trainnumber" placeholder="Enter Train No" required autocomplete="off" maxlength="6" style="width:100%" title="Enter Valid Train Number" pattern="[0-9]{10}"/>
+</td>
+</tr>
 <tr>
-<td><input type="submit" name="btnsubmit" value="check train"/>
+<td colspan=2><hr/></td></tr>
+<tr>
+<td>
+Train Name</td>
+<td>
+ <input type="text" name="name" placeholder="Enter Train Name" maxlength="50" autofocus="on" autocomplete="off" required="required"/>
+</td>
+</tr>
+<tr>
+<td colspan=2><hr/></td></tr>
+<tr>
+<td>AC-2Tier</td>
+<td><input type="number" name="ac2tiernumber" placeholder="Enter the number of AC-2 Tier Coach" required autocomplete="off"/></td></tr>
+<tr>
+<td colspan=2><hr/></td></tr>
+<tr>
+<td>AC-3Tier</td>
+<td><input type="number" name="ac2tiernumber" placeholder="Enter the number of AC-3 Tier Coach" required autocomplete="off"/></td></tr>
+<tr>
+<td colspan=2><hr/></td></tr><tr>
+<td>Sleeper</td>
+<td><input type="number" name="sleepnumber" placeholder="Enter the number of Sleeper Coach" required autocomplete="off"/></td></tr>
+
+<tr><td colspan=2><hr/></td></tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" name="btnsubmit" value="Submit"/>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" name="btnclear" value="Cancel">
 </td>
 </tr>
 </table>
-{{%csrf_token}}
+<br/><br/>
+<center>
+    <a href="/railway/addtraindisplay">View Train Details</a>
+</center>
+{%csrf_token%}
 </form>
-   		</td>
+        	</td>
     	</tr>
     </table>
 

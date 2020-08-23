@@ -1,140 +1,221 @@
 <html>
  <head>
    <title>Passenger List Page</title>
+        <style>
+            body {
+                background-color: skyblue;
+                width: 100%;
+                color: #000;
+            }
+            .title {
+                margin: 5px auto 30px;
+                font-size: 25px;
+                text-align: center;
+                text-decoration: underline;
+                font-weight: bold;
+                color: #000;
+                background-color: #D16F00;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            input[type=text], input[type=email], input[type=password],input[type=number],select {
+                background-color: #E6E6E6;
+                padding: 6px;
+                font-size: small;
+                color: #574B4B;
+                font-weight: bold;
+            }
+            input[type=submit] {
+                padding: 5px 25px;
+                font-size: small;
+                color: black;
+                margin-left: 70px;
+            }
+            input[type=reset] {
+                padding: 5px 25px;
+                font-size: small;
+                color: black;
+                margin-left: 50px;
+            }
+            li {
+                list-style: none;
+                display: inline-block;
+                margin-right: 30px;
+            }
+            .linkClass a {
+                color: #000;
+                font-size: 15px;
+                margin: 0px 20px 10px 200px;
+            }
+            .mybtn {
+                color: #000;
+                background-color: #fff;
+                position: relative;
+                left: 40px;
+                bottom: 10px;
+            }
+            .mainTitle {
+                font-size: 40px;
+                font-family: "Bauhaus 93";
+                color: #000;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 2px solid white;
+                margin-bottom: 50px;
+            }
+        </style>
+
  </head>
  <body>
-     <form name="form1" method="POST">
-     	{{msg}}
+   <table style="width: 99%;height:100%;" border="1">
+    	<tr>
+    		<td style="width: 100%;height:10%;" align="center"><br/><h1>Indian Railway E-Ticketing</h1></td>
+    	</tr>
+    	<tr>
+    		<td style="width: 100%;height:5%;">
+			<table style="width: 100%;height:100%;">
+					<tr>
+							<th><a href="adminhome"><font color="brown">Home</font></a></th>
+						<th><a href="addtrain"><font color="brown">Add Train</font></a></th>
+						<th><a href="register"><font color="brown">Add TC</font></a></th>
+						<th><a href="passengerlist"><font color="brown">Passenger Entry</font></a></th>
+						<th><a href="railway"><font color="brown">Signout</font></a></th>
+						
+					</tr>
+			</table>    			
+    		</td>
+    	</tr>
+    	<tr>
+    		
+    		<td style="width: 100%;height:80%;">
+ 
+     <form name="form1" method="POST" autocomplete="off">
 <center>
-
-<tr>
-<td>Passenger List
-</td></tr></center><br/>
+             <font size="+2" color="white">
+                {% if msg  %}
+                    {{msg}}
+                {% endif  %}
+            </font>
+</center>
 <table align="center">
+    <tr>
+        <td>Date of Journey<br/><input autofocus="on" placeholder="Select Date of Journey" type="date" name="doj" style="width:100%;" required></td>
+        <td>
+            <select name="trainnumber" style="width:100%;" required>
+                <option value="">Train Name</option>
+            <option>Udyan Express</option>
+            <option>Solapur Express</option>
+            <option>Basava Express</option>
+            <option>Kurla Express</option>
+            </select>
+    </td>
+    <td>
+            <select name="source" style="width:100%;" required>
+            <option value="">Select Source</option>
+            <option>Gulbarga</option>
+            <option>Yeshvantpur</option>
+            </select>
+
+    </td>
+            <td>
+            <select name="destination" style="width:100%;" required>
+            <option value="">Destination</option>
+            <option>Gulbarga</option>
+            <option>Yeshvantpur</option>
+            </select>
+
+    </td>
+            <td>
+            <select name="coachtype" style="width:100%;" required>
+            <option value="">Select Coach Type</option>
+            <option>2 Tire AC</option>
+            <option>3 Tire AC</option>
+            <option>Second Class</option>
+            
+            </select>
+
+    </td>
+
+    </tr>
+
+<tr><td colspan="5"><hr/></td></tr>
+
 <tr>
-<td>Name</td>
-<td>Age</td>
-<td>Gender</td>
-<td>Concession</td></tr>
-<tr><td colspan=4><hr/></td></tr>
-<tr>
-<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
+<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off"  title="only alphabets are allowed"style="width:100%;" required pattern="[a-zA-Z]{2,50}"/>
 </td>
 <td>
-<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
+<input type="text" style="width:100%;" required name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" /> 
 </td>
 <td>
-<select required name="gender">
+<select style="width:100%;" required name="gender">
 <option value="">Select Gender</option>
 <option>Male</option>
 <option>Female</option>
 </select></td>
 <td>
-<select required name="concession">
-<option value="">Select Concession</option>
+<select style="width:100%;" required  name="concession">
+<option value="">Select Concession Type</option>
+<option>Normal</option>
 <option>Disabled Passengers</option>
 <option>Senior Citizens</option>
 <option>Students</option>
 <option>Artists and Sportspersons</option>
+</select>
+</td>
+<td>
+<select style="width:100%;" required  name="idproof">
+<option value="">Select ID Proof Carrying</option>
+<option>Driving License</option>
+<option>Aadhar Card</option>
+<option>PAN Card</option>
+<option>Election Card</option>
+<option>Govt Reg. ID</option>
+</select>
+</td>
 
-</select></td></tr>
-<tr><td colspan=4><hr/></td></tr>
+</tr>
+<tr><td colspan="5"><hr/></td></tr>
 <tr>
-<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
-</td>
-<td>
-<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
-</td>
-<td>
-<select required name="gender">
-<option value="">Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-</select></td>
-<td>
-<select required name="concession">
-<option value="">Select Concession</option>
-<option>Disabled Passengers</option>
-<option>Senior Citizens</option>
-<option>Students</option>
-<option>Artists and Sportspersons</option>
+    <td>
+        <input min="1" max="72" style="width:100%;" type="number" name="txtseatnumber" placeholder="Enter Seat Number" required>
+    </td>
+    <td>
+        <input type="text" name="txtkey" placeholder="Enter Verification Key" required>
+    </td>
 
-</select></td></tr>
-
-<tr><td colspan=4><hr/></td></tr>
-<tr>
-<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
-</td>
-<td>
-<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
-</td>
-<td>
-<select required name="gender">
-<option value="">Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-</select></td>
-<td>
-<select required name="concession">
-<option value="">Select Concession</option>
-<option>Disabled Passengers</option>
-<option>Senior Citizens</option>
-<option>Students</option>
-<option>Artists and Sportspersons</option>
-
-</select></td></tr>
-<tr><td colspan=4><hr/></td></tr>
+    <td>
+        <select name="seatstatus">
+            <option>Select Seat Status</option>
+            <option value="CNF">Confirmed</option>
+            <option value="RAC">RAC</option>
+            
+        </select>
+    </td>
+    <td>
+        <input type="number" name="txtstatusnumber" placeholder="Enter Status Number" required>
+    </td>
+    <td>
+        <input type="number" name="pnrnumber" placeholder="Enter PNR Number" required>
+    </td>
+    
+</tr>
+<tr><td colspan="5"><hr/></td></tr>
 
 <tr>
-<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
-</td>
-<td>
-<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
-</td>
-<td>
-<select required name="gender">
-<option value="">Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-</select></td>
-<td>
-<select required name="concession">
-<option value="">Select Concession</option>
-<option>Disabled Passengers</option>
-<option>Senior Citizens</option>
-<option>Students</option>
-<option>Artists and Sportspersons</option>
-
-</select></td></tr>
-
-<tr><td colspan=4><hr/></td></tr>
-<tr>
-<td><input type="text" name="passengername" placeholder="Enter Name" maxlength="50" autofocus="on" autocomplete="off" required="required" title="only alphabets are allowed" pattern="[a-zA-Z]{2,50}"/>
-</td>
-<td>
-<input type="text" name="passengerage" placeholder="Enter Age" autofocus="on" autocomplete="off" required="required"/> 
-</td>
-<td>
-<select required name="gender">
-<option value="">Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-</select></td>
-<td>
-<select required name="concession">
-<option value="">Select Concession</option>
-<option>Disabled Passengers</option>
-<option>Senior Citizens</option>
-<option>Students</option>
-<option>Artists and Sportspersons</option>
-</select></td></tr>
-<hr/>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="submit" name="btnsubmit" value="submit"/>
+<td colspan="5" align="center">
+<input type="submit" name="btnsubmit" value="Submit"/>
 <input type="reset" name="btnclear" value="Cancel">
 </td>
 </tr></table>
 {%csrf_token%}
+<center>
+    <br/><br/>
+<a href="passengerlistdisplay">Passenger List</a>
+</center>
 </form>
+   		</td>
+    	</tr>
+    </table>
+
 </body>
+</html>

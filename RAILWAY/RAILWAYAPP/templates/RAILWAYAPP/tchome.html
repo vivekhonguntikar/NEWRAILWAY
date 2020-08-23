@@ -1,9 +1,9 @@
 <html>
  <head>
-   <title>Passenger List Page</title>
+   <title>TC Home</title>
         <style>
             body {
-                background-color: skyblue;
+                background-color:skyblue;
                 width: 100%;
                 color: #000;
             }
@@ -67,44 +67,84 @@
 
  </head>
  <body>
-   <table style="width: 99%;height:100%;" border="1">
-      <tr>
-        <td style="width: 100%;height:10%;" align="center"><br/><h1>Indian Railway E-Ticketing</h1></td>
-      </tr>
-      <tr>
-        <td style="width: 100%;height:5%;">
-      <table style="width: 100%;height:100%;">
-          <tr>
-          <tr>
-            <th><a href="tchome"><font color="brown">Home</font></a></th>
-            <th><a href="trainroutedisplay"><font color="brown">Train Route</font></a></th>
-            <th><a href="tcpassengerlistdisplay"><font color="brown">Passenger List</font></a></th>
-            <th><a href="railway"><font color="brown">Signout</font></a></th>
-              
-          </tr>
-            
-          </tr>
-      </table>          
-        </td>
-      </tr>
-      <tr>
-        
-        <td style="width: 100%;height:80%;">
- 
-
-	<table border=1 align="center">
+    <table style="width: 99%;height:100%;" border="1">
+    	<tr>
+    		<td style="width: 100%;height:10%;" align="center"><br/><h1>Indian Railway E-Ticketing</h1></td>
+    	</tr>
+    	<tr>
+    		<td style="width: 100%;height:5%;">
+			<table style="width: 100%;height:100%;">
+					<tr>
+						<th><a href="tchome"><font color="brown">Home</font></a></th>
+						<th><a href="trainroutedisplay"><font color="brown">Train Route</font></a></th>
+						<th><a href="tcpassengerlistdisplay"><font color="brown">Passenger List</font></a></th>
+						<th><a href="railway"><font color="brown">Signout</font></a></th>
+							
+					</tr>
+			</table>    			
+    		</td>
+    	</tr>
+    	<tr>
+    		
+    		<td style="width: 100%;height:80%;">
+     <form name="form1" method="POST">
+<center>
+             <font size="+2" color="white">
+                {% if msg  %}
+                    {{msg}}
+                {% endif  %}
+            </font>
+</center>
+    <table border="1" align="center">
+<tr>
+    <th>ID</th>
+    <th>TT APP</th>
+    <th>Passenger Name</th>
+    <th>Ticket Type</th>
+    <th>ID Proof</th>
+    <th>DOJ</th>
+    <th>Train Name</th>
+    <th>Src</th>
+    <th>Dest.</th>
+    <th>Coach</th>
+    <th>Seat Status</th>
+    <th>Status No.</th>
+    <th>PNR</th>
+    <th colspan="2">Action</th>
+</tr>
   {%for d in data%}
+  <form name="frm" method="post">
+    <input type="hidden" name="pid" value="{{d.id}}">
   <tr>
-  	<td>{{d.trainno}}</td>
-  	<td>{{d.trainfrom}}</td>
-  	<td>{{d.trainto}}</td>
-  	<td>{{d.route}}</td>
-  	<td>{{d.departuretime}}</td>
-    <td>{{d.arrivaltime}}</td>
+    <td>{{d.id}}</td>
+    <td>{{d.ttapproval}}</td>
+
+    <td>{{d.name}} ({{d.age}})({{d.gender}})</td>
+    <td>{{d.concession}}</td>
+    <td>{{d.idproof}}</td>
+    <td>{{d.doj}}</td>
+    <td>{{d.trainid}}</td>
+    <td>{{d.source}}</td>
+    <td>{{d.destination}}</td>
+    <td>{{d.coachtype}}-{{d.seatnumber}}</td>
+    <td>{{d.seatstatus}}</td>
+    <td>{{d.statusnumber}}</td>
+    <td>{{d.pnrnumber}}</td>
+    <td>
+      <input type="submit" name="btnsubmit" value="Occupied">
+    </td>
+    <td>
+      <input type="submit" name="btnsubmit" value="Vacant">
+    </td>
   </tr>
   {% csrf_token %} 
   </form>
   {%endfor%}
     </table>
+
+    		</td>
+    	</tr>
+    </table>
+
 </body>
 </html>

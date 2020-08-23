@@ -91,16 +91,48 @@
         
         <td style="width: 100%;height:80%;">
  
-
+     <form name="form1" method="POST">
+<center>
+             <font size="+2" color="white">
+                {% if msg  %}
+                    {{msg}}
+                {% endif  %}
+            </font>
+</center>
 	<table border=1 align="center">
+<tr>
+  <td>Passenger Name</td>
+  <td>Age</td>
+  <td>Gender</td>
+  <td>Ticket Concession Type</td>
+  <td>ID Proof</td>
+  <td>Date of Journey</td>
+  <td>Train Name</td>
+  <td>Source</td>
+  <td>Destination</td>
+<td>Coach Type</td>
+
+
+
+</tr>
   {%for d in data%}
+  <form name="frm" method="post">
+    <input type="hidden" name="pid" value="{{d.id}}">
   <tr>
-  	<td>{{d.trainno}}</td>
-  	<td>{{d.trainfrom}}</td>
-  	<td>{{d.trainto}}</td>
-  	<td>{{d.route}}</td>
-  	<td>{{d.departuretime}}</td>
-    <td>{{d.arrivaltime}}</td>
+  	<td>{{d.name}}</td>
+  	<td>{{d.age}}</td>
+  	<td>{{d.gender}}</td>
+  	<td>{{d.concession}}</td>
+    <td>{{d.idproof}}</td>
+    <td>{{d.doj}}</td>
+    <td>{{d.trainid}}</td>
+    <td>{{d.source}}</td>
+    <td>{{d.destination}}</td>
+    <td>{{d.coachtype}}</td>
+    
+    <td>
+      <input type="submit" name="btnsubmit" value="Delete">
+    </td>
   </tr>
   {% csrf_token %} 
   </form>

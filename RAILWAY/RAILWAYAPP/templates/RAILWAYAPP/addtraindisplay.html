@@ -1,11 +1,110 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
+ <head>
+   <title>Add Train Page</title>
+        <style>
+            body {
+                background-color:skyblue;
+                width: 100%;
+                color: #000;
+            }
+            .title {
+                margin: 5px auto 30px;
+                font-size: 25px;
+                text-align: center;
+                text-decoration: underline;
+                font-weight: bold;
+                color: #000;
+                background-color: #D16F00;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            input[type=text], input[type=email], input[type=password],input[type=number],select {
+                background-color: #E6E6E6;
+                padding: 6px;
+                font-size: small;
+                color: #574B4B;
+                font-weight: bold;
+            }
+            input[type=submit] {
+                padding: 5px 25px;
+                font-size: small;
+                color: black;
+                margin-left: 70px;
+            }
+            input[type=reset] {
+                padding: 5px 25px;
+                font-size: small;
+                color: black;
+                margin-left: 50px;
+            }
+            li {
+                list-style: none;
+                display: inline-block;
+                margin-right: 30px;
+            }
+            .linkClass a {
+                color: #000;
+                font-size: 15px;
+                margin: 0px 20px 10px 200px;
+            }
+            .mybtn {
+                color: #000;
+                background-color: #fff;
+                position: relative;
+                left: 40px;
+                bottom: 10px;
+            }
+            .mainTitle {
+                font-size: 40px;
+                font-family: "Bauhaus 93";
+                color: #000;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 2px solid white;
+                margin-bottom: 50px;
+            }
+        </style>
+
+ </head>
+ <body>
+    <table style="width: 99%;height:100%;" border="1">
+        <tr>
+            <td style="width: 100%;height:10%;" align="center"><br/><h1>Indian Railway E-Ticketing</h1></td>
+        </tr>
+        <tr>
+            <td style="width: 100%;height:5%;">
+            <table style="width: 100%;height:100%;">
+                    <tr>
+                        <th><a href="adminhome"><font color="brown">Home</font></a></th>
+                        <th><a href="addtrain"><font color="brown">Add Train</font></a></th>
+                        <th><a href="register"><font color="brown">Add TC</font></a></th>
+                        <th><a href="passengerlist"><font color="brown">Passenger Entry</font></a></th>
+                        <th><a href="railway"><font color="brown">Signout</font></a></th>
+                            
+                    </tr>
+            </table>                
+            </td>
+        </tr>
+        <tr>
+            
+            <td style="width: 100%;height:80%;">
+                
+<center>
+        {{msg}}
+</center>
+
 	<table border=1 align="center">
+        <tr>
+            <td>Train No.</td>
+            <td>Train name</td>
+            <td>AC-2 Tire</td>
+            <td>AC-3 Tire</td>
+            <td>Second Class</td>
+            
+        </tr>
   {%for d in data%}
+     <form name="form1" method="POST">
+
   <tr>
   	<td>{{d.trainno}}</td>
   	<td>{{d.trainname}}</td>
@@ -16,9 +115,16 @@
       <input type="submit" name="btnsubmit" value="Delete">
     </td>
   </tr>
+</form>
+
   {%endfor%}
     </table>
+<br/><br/>
 
+{%csrf_token%}
 
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
