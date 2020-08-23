@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Reservation Page</title>
+</head>
+<body>
+	{{msg}}
+<form name="form1" method="POST">
+<center><tr>
+<td>Reservation</td>
+</tr>
+</center><br/>
+
+<table align="center" width="100%">
+<tr>
+<td>Source</td>
+<td><select required name="sourcestation">
+<option value="">Select Source Station</option>
+<option>BNC</option>
+<option>UBL</option>
+<option>MAQ</option>
+<option>MYS</option>
+</select>
+</td>
+<td>Destination</td>
+<td><select required name="destinationstation">
+<option value="">Select Destination Station</option>
+<option>HAS</option>
+<option>KLBG</option>
+<option>SMET</option>
+<option>RC</option>
+</select>
+</td></tr>
+<tr><td colspan=4><hr/></td></tr>
+<tr>
+<td><input type="submit" name="btnsubmit" value="check train"/>
+</td>
+</tr>
+</table>
+{{%csrf_token}}
+</form>
+</body>

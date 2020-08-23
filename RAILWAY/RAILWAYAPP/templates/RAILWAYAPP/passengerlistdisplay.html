@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border=1 align="center">
+  {%for d in data%}
+  <tr>
+  	<td>{{d.name}}</td>
+  	<td>{{d.age}}</td>
+  	<td>{{d.gender}}</td>
+  	<td>{{d.concession}}</td>
+    <td><input type="submit" name="btnsubmit" value="Delete">
+    </td>
+  </tr>
+  {%endfor%}
+    </table>
+</body>
+</html>
